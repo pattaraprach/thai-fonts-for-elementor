@@ -16,7 +16,7 @@ function elementor_add_fonts( $elementor_fonts ) {
     }
 
     foreach ( $fonts as $font ) {
-        $font = ucwords(str_replace("-"," ",$font));
+        
         $elementor_fonts[ $font ] = 'tfe';
     }
 
