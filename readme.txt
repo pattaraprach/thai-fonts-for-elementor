@@ -28,7 +28,7 @@ from the Elementor Editor. List of included Thai fonts:
     * Boon
     * Anuphan
     * Anakotmai
-    * Silpakorn
+    * Silpakorn (Silpakorn 70 Yr)
 
 == Screenshots ==
 1. Install and see fonts live in Elementor!
