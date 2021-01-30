@@ -1,0 +1,21 @@
+/*
+Font Name: Silpakorn
+Weights: Bold
+*/
+@font-face {
+    font-family: "Silpakorn";
+    src: url("silpakorn-normal.woff2") format("woff2"),
+      url("silpakorn-normal.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Silpakorn";
+    src: url("silpakorn-italic.woff2") format("woff2"),
+      url("silpakorn-italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  
