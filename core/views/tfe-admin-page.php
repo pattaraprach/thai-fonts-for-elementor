@@ -30,7 +30,7 @@
                                         do_settings_sections( 'tfe_settings' );?>
                                 <div class="select-multiple">
                                             <select name="tfe-fonts[]" multiple size="4">
-                                                <option value="Noto-Sans-Thai" <?php check_selected_fonts("noto-sans-thai"); ?>>Noto Sans Thai</option>
+                                                <option value="noto-sans-thai" <?php check_selected_fonts("noto-sans-thai"); ?>>Noto Sans Thai</option>
                                                 <option value="noto-serif-thai" <?php check_selected_fonts("noto-serif-thai"); ?>>Noto Serif Thai</option>
                                                 <option value="moonjelly" <?php check_selected_fonts("moonjelly"); ?>>Moonjelly</option>
                                                 <option value="ibm-plex-thai" <?php check_selected_fonts("ibm-plex-thai"); ?>>IBM Plex Thai</option>
@@ -38,9 +38,9 @@
                                                 <option value="cs-chatthai-ui" <?php check_selected_fonts("cs-chatthai-ui"); ?>>CS Chatthai UI</option>
                                                 <option value="cloud" <?php check_selected_fonts("cloud"); ?>>Cloud</option>
                                                 <option value="boon" <?php check_selected_fonts("boon"); ?>>Boon</option>
-                                                <option value="Anuphan" <?php check_selected_fonts("Anuphan"); ?>>Anuphan</option>
-                                                <option value="Anakotmai" <?php check_selected_fonts("Anakotmai"); ?>>Anakotmai</option>
-                                                <option value="Silpakorn" <?php check_selected_fonts("Silpakorn"); ?>>Silpakorn</option>
+                                                <option value="anuphan" <?php check_selected_fonts("anuphan"); ?>>Anuphan</option>
+                                                <option value="anakotmai" <?php check_selected_fonts("anakotmai"); ?>>Anakotmai</option>
+                                                <option value="silpakorn" <?php check_selected_fonts("silpakorn"); ?>>Silpakorn</option>
                                             </select>
                                             </div>
                                             <button type="submit" class="tf-button">Save Settings</button>

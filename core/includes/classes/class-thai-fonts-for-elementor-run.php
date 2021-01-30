@@ -146,7 +146,7 @@ class Thai_Fonts_For_Elementor_Run{
 		$fonts = get_option('tfe-fonts');
 		if($fonts){ 
 			foreach ($fonts as $font) {
-				wp_enqueue_style( $font . '-thai-font', THAIFONT4E_PLUGIN_URL . 'core/includes/assets/fonts/'.$font.'/font.css', array(), THAIFONT4E_VERSION, 'all' );
+				wp_enqueue_style( $font . '-font', THAIFONT4E_PLUGIN_URL . 'core/includes/assets/fonts/'. $font .'/font.css', array(), THAIFONT4E_VERSION, 'all' );
 			}
 		 }
 		
