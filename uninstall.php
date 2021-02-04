@@ -3,7 +3,7 @@
  * Fired when the plugin is uninstalled.
  *
  * Everything in uninstall.php will be executed when user decides to delete the plugin. 
- * @since		1.0
+ * @since		1.0.1
  */
 
 // Exit if accessed directly

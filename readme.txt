@@ -61,3 +61,9 @@ No prior updates required, this is the very first release
 
 = 1.0.0: January 28, 2021 =
 * Birthday of Thai Fonts for Elementor
+
+= 1.0.1: February 4, 2021 =
+* Added RSU Font
+* Fix CS PraJad not rendering
+* Fix CS ChatThaiUI not rendering
+* Remove unnessesary files

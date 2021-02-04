@@ -3,23 +3,7 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * HELPER COMMENT START
- * 
- * This class contains all of the plugin related settings.
- * Everything that is relevant data and used multiple times throughout 
- * the plugin.
- * 
- * To define the actual values, we recommend adding them as shown above
- * within the __construct() function as a class-wide variable. 
- * This variable is then used by the callable functions down below. 
- * These callable functions can be called everywhere within the plugin 
- * as followed using the get_plugin_name() as an example: 
- * 
- * THAIFONT4E->settings->get_plugin_name();
- * 
- * HELPER COMMENT END
- */
+
 
 /**
  * Class Thai_Fonts_For_Elementor_Settings
