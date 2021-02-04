@@ -1,50 +1,54 @@
 <?php
-/**
-	 * Check if font is selected then echo "selected", else return nothing
-	 *
-	 * @access	public
-	 * @since	1.0.0
-	 *
-	 * @return	void
-	 */
 
-	function check_selected_fonts($selected) { 
+$fontClass = new Addtional_Thai_Fonts();
+$fonts = $fontClass->get_fonts();
 
-        $fonts = get_option('tfe-fonts');
-        if ($fonts){
-            if (in_array($selected , $fonts)) {
-                echo "selected";
-            } else { 
-                return '';
-            }
-         }      
-	}
+function check_selected($data){
+
+    $user_fonts = get_option('tfe-fonts');
+
+    if(isset($user_fonts)){
+
+      if(in_array($data, $user_fonts)) {
+
+        echo 'selected';
+
+      } 
+
+    }
+  
+  }
+
 ?>
+
 <div class="tf-container">
         <div class="title">
             <h1>Thai Fonts For Elementor</h1>
         </div>
-        <div class="content">
+        <div class="form">
+        <p>เลือกฟอนต์ที่ต้องการใช้ใน Elementor</p>
                                 <form method="post" action="options.php">
                                 <?php   settings_fields( 'tfe_settings' );
                                         do_settings_sections( 'tfe_settings' );?>
                                 <div class="select-multiple">
-                                            <select name="tfe-fonts[]" multiple size="4">
-                                                <option value="noto-sans-thai" <?php check_selected_fonts("noto-sans-thai"); ?>>Noto Sans Thai</option>
-                                                <option value="noto-serif-thai" <?php check_selected_fonts("noto-serif-thai"); ?>>Noto Serif Thai</option>
-                                                <option value="moonjelly" <?php check_selected_fonts("moonjelly"); ?>>Moonjelly</option>
-                                                <option value="ibm-plex-thai" <?php check_selected_fonts("ibm-plex-thai"); ?>>IBM Plex Thai</option>
-                                                <option value="cs-prajad" <?php check_selected_fonts("cs-prajad"); ?>>CS Prajad</option>
-                                                <option value="cs-chatthai-ui" <?php check_selected_fonts("cs-chatthai-ui"); ?>>CS Chatthai UI</option>
-                                                <option value="cloud" <?php check_selected_fonts("cloud"); ?>>Cloud</option>
-                                                <option value="boon" <?php check_selected_fonts("boon"); ?>>Boon</option>
-                                                <option value="anuphan" <?php check_selected_fonts("anuphan"); ?>>Anuphan</option>
-                                                <option value="anakotmai" <?php check_selected_fonts("anakotmai"); ?>>Anakotmai</option>
-                                                <option value="silpakorn" <?php check_selected_fonts("silpakorn"); ?>>Silpakorn</option>
+                                            <select id="myMulti" name="tfe-fonts[]" multiple="multiple">
+                                            <?php foreach ($fonts as $slug => $name) : ?>
+                                            <option value="<?php echo $slug; ?>" <?php check_selected($slug); ?>><?php echo $name; ?></option>
+                                            <?php endforeach ?>
                                             </select>
                                             </div>
                                             <button type="submit" class="tf-button">Save Settings</button>
                                 </form>
                             </div>
+          <div class="tf-font-list">
+            <p>ฟอนต์ที่ใช้งานอยู่ :</p>
+            <ul>
+            <?php $selectedFonts = get_option('tfe-fonts'); ?>
+            <?php foreach ($selectedFonts as $selectedFont) : ?>
+              <li><?php echo $selectedFont; ?></li>
+            <?php endforeach ?>  
+            </ul>
+        </div>
 </div>
+
 

@@ -72,3 +72,35 @@ class Thai_Fonts_For_Elementor_Settings{
 		return apply_filters( 'THAIFONT4E/settings/get_plugin_name', $this->plugin_name );
 	}
 }
+
+/**
+ * Class Additional Thai Fonts
+ * This class contains all additional Fonts added
+ *
+ */
+
+class Addtional_Thai_Fonts {
+
+	protected $fonts =[
+
+		'noto-sans-thai' => 'Noto-Sans-Thai',
+		'noto-serif-thai' => 'Noto-Serif-Thai',
+		'moonjelly' => 'Moonjelly',
+		'anakotmai' => 'Anakotmai',
+		'anuphan' => 'Anuphan',
+		'boon' => 'Boon',
+		'cloud' => 'Cloud',
+		'cs-prajad' => 'CS PraJad',
+		'cs-chatthai-ui' => 'CS ChatThaiUI',
+		'ibm-plex-thai' => 'IBM-Plex-Thai',
+		'silpakorn' => 'Silpakorn',
+		'rsu' => 'RSU'
+	];
+
+
+	public function get_fonts(){
+		return $this->fonts;
+	}
+
+
+}

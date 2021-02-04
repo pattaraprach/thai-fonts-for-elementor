@@ -20,3 +20,12 @@ Backend related CSS
     background-color:teal;
     transition: 0.2s;
 }
+
+.tf-font-list li  {
+    background-color: #26b626;
+    display: inline;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}

@@ -3,20 +3,6 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * HELPER COMMENT START
- * 
- * This is the main class that is responsible for registering
- * the core functions, including the files and setting up all features. 
- * 
- * To add a new class, here's what you need to do: 
- * 1. Add your new class within the following folder: core/includes/classes
- * 2. Create a new variable you want to assign the class to (as e.g. public $helpers)
- * 3. Assign the class within the instance() function ( as e.g. self::$instance->helpers = new Thai_Fonts_For_Elementor_Helpers();)
- * 4. Register the class you added to core/includes/classes within the includes() function
- * 
- * HELPER COMMENT END
- */
 
 if ( ! class_exists( 'Thai_Fonts_For_Elementor' ) ) :
 
@@ -38,15 +24,6 @@ if ( ! class_exists( 'Thai_Fonts_For_Elementor' ) ) :
 		 * @var		object|Thai_Fonts_For_Elementor
 		 */
 		private static $instance;
-
-		/**
-		 * THAIFONT4E helpers object.
-		 *
-		 * @access	public
-		 * @since	1.0.0
-		 * @var		object|Thai_Fonts_For_Elementor_Helpers
-		 */
-		public $helpers;
 
 		/**
 		 * THAIFONT4E settings object.
@@ -97,7 +74,6 @@ if ( ! class_exists( 'Thai_Fonts_For_Elementor' ) ) :
 				self::$instance					= new Thai_Fonts_For_Elementor;
 				self::$instance->base_hooks();
 				self::$instance->includes();
-				self::$instance->helpers		= new Thai_Fonts_For_Elementor_Helpers();
 				self::$instance->settings		= new Thai_Fonts_For_Elementor_Settings();
 
 				//Fire the plugin logic
@@ -121,10 +97,7 @@ if ( ! class_exists( 'Thai_Fonts_For_Elementor' ) ) :
 		 * @return  void
 		 */
 		private function includes() {
-			require_once THAIFONT4E_PLUGIN_DIR . 'core/includes/classes/class-thai-fonts-for-elementor-settings.php';
-			require_once THAIFONT4E_PLUGIN_DIR . 'core/includes/classes/class-thai-fonts-for-elementor-helpers.php';
-			
-			require_once THAIFONT4E_PLUGIN_DIR . 'public/thai-fonts-for-elementor-public.php';
+			require_once THAIFONT4E_PLUGIN_DIR . 'core/includes/classes/class-thai-fonts-for-elementor-settings.php';		
 			require_once THAIFONT4E_PLUGIN_DIR . 'core/includes/classes/class-thai-fonts-for-elementor-run.php';
 		}
 

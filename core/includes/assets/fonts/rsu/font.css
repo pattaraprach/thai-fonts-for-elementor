@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'RSU';
+    src:  url('rsulight.woff2') format('woff2'),
+          url('rsulight.woff') format('woff');
+          font-weight: 100;
+          font-style: normal;
+          font-display: swap;
+    }
+
+@font-face {
+    font-family: 'RSU';
+    src: url('rsuregular.woff2') format('woff2'),
+         url('rsuregular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'RSU';
+    src: url('rsubold.woff2') format('woff2'),
+         url('rsubold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;     
+}

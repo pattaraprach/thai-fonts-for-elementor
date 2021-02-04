@@ -2,35 +2,6 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
-
-/**
- * HELPER COMMENT START
- * 
- * This class is used to bring your plugin to life. 
- * All the other registered classed bring features which are
- * controlled and managed by this class.
- * 
- * Within the add_hooks() function, you can register all of 
- * your WordPress related actions and filters as followed:
- * 
- * add_action( 'my_action_hook_to_call', array( $this, 'the_action_hook_callback', 10, 1 ) );
- * or
- * add_filter( 'my_filter_hook_to_call', array( $this, 'the_filter_hook_callback', 10, 1 ) );
- * or
- * add_shortcode( 'my_shortcode_tag', array( $this, 'the_shortcode_callback', 10 ) );
- * 
- * Once added, you can create the callback function, within this class, as followed: 
- * 
- * public function the_action_hook_callback( $some_variable ){}
- * or
- * public function the_filter_hook_callback( $some_variable ){}
- * or
- * public function the_shortcode_callback( $attributes = array(), $content = '' ){}
- * 
- * 
- * HELPER COMMENT END
- */
-
 /**
  * Class Thai_Fonts_For_Elementor_Run
  *
@@ -75,8 +46,8 @@ class Thai_Fonts_For_Elementor_Run{
 		add_action( 'admin_init', array( $this, 'register_tfe_fonts_settings' ));
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_selected_thai_fonts'));
 
-		add_filter( 'elementor/fonts/groups', 'elementor_add_font_group' );
-		add_filter( 'elementor/fonts/additional_fonts', 'elementor_add_fonts' );
+		add_filter( 'elementor/fonts/groups', array( $this, 'elementor_add_font_group' ));
+		add_filter( 'elementor/fonts/additional_fonts', array( $this, 'elementor_add_fonts' ));
 	}
 
 	/**
@@ -142,14 +113,78 @@ class Thai_Fonts_For_Elementor_Run{
 	 * @return	void
 	 */
 
-	public function enqueue_selected_thai_fonts() { 
-		$fonts = get_option('tfe-fonts');
-		if($fonts){ 
-			foreach ($fonts as $font) {
-				wp_enqueue_style( $font . '-font', THAIFONT4E_PLUGIN_URL . 'core/includes/assets/fonts/'. $font .'/font.css', array(), THAIFONT4E_VERSION, 'all' );
-			}
-		 }
+	public function enqueue_selected_thai_fonts() {
 		
+		$fontClass = new Addtional_Thai_Fonts();
+		$fonts = $fontClass->get_fonts();
+		$user_fonts = get_option('tfe-fonts');
+
+		if(isset($user_fonts)){
+
+			foreach ($fonts as $slug => $name){
+
+			  if(in_array($slug, $user_fonts)){
+
+		
+				wp_enqueue_style( $slug , THAIFONT4E_PLUGIN_URL . 'core/includes/assets/fonts/'. $slug .'/font.css', array(), THAIFONT4E_VERSION, 'all' );
+
+			  }
+
+			}
+		
+		  }
 	}
 
+	/**
+	 * Add Thai Fonts as Elementor Font Group
+	 *
+	 * @access	public
+	 * @since	1.0.0
+	 *
+	 * @return	void
+	 */
+
+	public function elementor_add_font_group( $groups ) {
+
+		$groups[ 'tfe' ] = __( 'Thai Fonts', 'elementor-tfe-fonts' );
+	
+		return $groups;
+	}
+
+	/**
+	 * Add Thai Fonts to Elementor Additional Fonts
+	 *
+	 * @access	public
+	 * @since	1.0.0
+	 *
+	 * @return	void
+	 */
+	
+	public function elementor_add_fonts( $elementor_fonts ) {
+	
+		$fontClass = new Addtional_Thai_Fonts();
+		$fonts = $fontClass->get_fonts();
+		$user_fonts = get_option('tfe-fonts');
+	
+		if ( ! $user_fonts ) {
+			return $elementor_fonts;
+		}
+		
+		foreach ($fonts as $slug => $name){
+	
+			if(in_array($slug, $user_fonts)){
+	
+	  
+				$elementor_fonts[ $name ] = 'tfe';
+	
+			}
+	
+		  }
+	
+		return $elementor_fonts;
+	}
+
+
 }
+
+

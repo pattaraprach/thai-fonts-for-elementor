@@ -3,24 +3,24 @@
  Weights: 400, 700
 */
 @font-face {
-  font-family: "cs-prajad";
-  src: url("csprajad-bold-webfont.eot");
-  src: url("csprajad-bold-webfont.eot?#iefix") format("embedded-opentype"),
-    url("csprajad-bold-webfont.woff2") format("woff2"),
-    url("csprajad-bold-webfont.woff") format("woff"),
-    url("csprajad-bold-webfont.ttf") format("truetype");
-  font-weight: 700;
+  font-family: 'CS PraJad';
+  src: url('csprajad.eot');
+  src: url('csprajad.eot?#iefix') format('embedded-opentype'),
+       url('csprajad.woff2') format('woff2'),
+       url('csprajad.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
   font-display: fallback;
 }
+
+
 @font-face {
-  font-family: "cs-prajad";
-  src: url("csprajad-webfont.eot");
-  src: url("csprajad-webfont.eot?#iefix") format("embedded-opentype"),
-    url("csprajad-webfont.woff2") format("woff2"),
-    url("csprajad-webfont.woff") format("woff"),
-    url("csprajad-webfont.ttf") format("truetype");
-  font-weight: 400;
+  font-family: 'CS PraJad';
+  src: url('csprajad-bold.eot');
+  src: url('csprajad-bold.eot?#iefix') format('embedded-opentype'),
+       url('csprajad-bold.woff2') format('woff2'),
+       url('csprajad-bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
   font-display: fallback;
 }
