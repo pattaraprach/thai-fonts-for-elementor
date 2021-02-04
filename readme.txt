@@ -5,7 +5,7 @@ Donate link: https://coomb.co
 Contributors: coombco
 Tags: elementor, fonts, support
 Requires at least: 5.5.3
-Tested up to: 5.6.0
+Tested up to: 5.6.1
 Requires PHP: 7.2
 Stable tag: 1.0.0
 License: GPLv2
@@ -29,6 +29,9 @@ from the Elementor Editor. List of included Thai fonts:
     * Anuphan
     * Anakotmai
     * Silpakorn
+    * RSU
+
+Fonts Authors Credit: Typomancer, Cadson Demak, CS@Nok, Fontuni, Silpakorn University, Rangsit University
 
 == Screenshots ==
 1. Install and see fonts live in Elementor!
